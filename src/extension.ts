@@ -1,8 +1,8 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-import { HelloWorldPanel } from "./HelloWorldPanel";
-import { SidebarProvider } from "./SidebarProvider";
+import { Dashboard } from "./Dashboard";
+import { SidebarProvider } from "./Sidebar";
 
 export function activate(context: vscode.ExtensionContext) {
   const sidebarProvider = new SidebarProvider(context.extensionUri);
@@ -39,15 +39,15 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("vstodo.helloWorld", () => {
-      HelloWorldPanel.createOrShow(context.extensionUri);
+    vscode.commands.registerCommand("vstodo.dashboard", () => {
+      Dashboard.createOrShow(context.extensionUri);
     })
   );
 
   context.subscriptions.push(
     vscode.commands.registerCommand("vstodo.refresh", async () => {
-      // HelloWorldPanel.kill();
-      // HelloWorldPanel.createOrShow(context.extensionUri);
+      // Dashboard.kill();
+      // Dashboard.createOrShow(context.extensionUri);
       await vscode.commands.executeCommand("workbench.action.closeSidebar");
       await vscode.commands.executeCommand(
         "workbench.view.extension.vstodo-sidebar-view"

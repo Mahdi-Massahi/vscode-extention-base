@@ -10,13 +10,13 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vstodo.helloWorld",
+    "onCommand:vstodo.dashboard",
     "onCommand:vstodo.askQuestion",
     "onCommand:vstodo.refresh",
     "onCommand:vstodo.addTodo",
     "onView:vstodo-sidebar"
   ],
-  "main": "./dist/extension.js",
+  "main": "./out/extension.js",
   "contributes": {
     "viewsContainers": {
       "activitybar": [
@@ -40,8 +40,9 @@
     },
     "commands": [
       {
-        "command": "vstodo.helloWorld",
-        "title": "Hello World"
+        "command": "vstodo.dashboard",
+        "category": "VSTodo",
+        "title": "Dashboard"
       },
       {
         "command": "vstodo.askQuestion",
